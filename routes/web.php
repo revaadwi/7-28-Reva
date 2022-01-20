@@ -14,13 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 'Halaman Home';
+    return view ("Home");
 });
 
 Route::get('/about', function () {
-    return 'Halaman About';
+    return view ("about");
 });
 
 Route::get('gallery', function () {
-    return 'Halaman Gallery';
+    return view ("gallery");
 });
