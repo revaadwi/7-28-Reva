@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
@@ -12,5 +13,13 @@ class ContactController extends Controller
         return view('contacts', [
             "title" => "Contacts"
         ]);
+    }
+    public function store(Request $request)
+    {
+        //dd($request->all());
+        $contact = Contact::Create($request->all());
+        $contact->save();
+
+        return redirect('contacts');
     }
 }
